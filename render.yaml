@@ -1,25 +1,22 @@
-# Archivo de configuración para Render
+# Este archivo ya está listo y configurado correctamente.
 services:
-  # Servicio para el Backend (API, Servidor)
   - type: web
     name: dobble-backend
-    env: node # Especifica el entorno, en este caso Node.js
-    plan: free # Puedes cambiar al plan que necesites
-    rootDir: ./backend # Le dice a Render que trabaje dentro de la carpeta 'backend'
+    env: node
+    plan: free
+    rootDir: ./backend
     buildCommand: "npm install"
     startCommand: "node server.js"
-    envVars: # Aquí defines tus variables de entorno
+    envVars:
+      # Render inyectará aquí AUTOMÁTICAMENTE las variables que
+      # configures en la pestaña "Environment" de tu dashboard.
+      # ¡No necesitas escribirlas aquí!
       - key: NODE_ENV
         value: production
-      - key: DATABASE_URL # Ejemplo si usas una base de datos de Render
-        fromDatabase:
-          name: dobble-database # Debes crear una base de datos en Render con este nombre
-          property: connectionString
 
-  # Servicio para el Frontend (Sitio Estático)
-  - type: static
+  - type: static_site
     name: dobble-frontend
     plan: free
-    rootDir: ./frontend # Le dice a Render que trabaje dentro de la carpeta 'frontend'
+    rootDir: ./frontend
     buildCommand: "npm install && npm run build"
-    publishDir: build # La carpeta que se genera después del 'build'. Podría ser 'dist' en tu caso.
+    publishDir: build
