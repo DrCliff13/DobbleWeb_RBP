@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Juego Dobble</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Fondo de estrellas -->
+<div class="stars-container">
+    <div class="stars1"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+</div>
+
+<!-- Contenido principal del juego -->
+<div class="game-content">
+  <h1>Juego Dobble</h1>
+  <p class="usuario">Bienvenido: <span id="nombreUsuario">undefined</span></p>
+  <div class="info-juego">
+    ⏱ Tiempo: <span id="tiempo">0.00</span> seg | 🧑 Puntaje: <span id="puntaje">0</span>
+  </div>
+  <br>
+  <button id="btnIniciar">🎯 Iniciar Juego</button>
+
+  <div id="zonaJuego" style="display: none;">
+    <div class="cartas">
+      <div id="carta1" class="carta">
+        <div class="figurasContainer" id="figurasCarta1"></div>
+      </div>
+      <div id="carta2" class="carta">
+        <div class="figurasContainer" id="figurasCarta2"></div>
+      </div>
+    </div>
+    <br>
+<button id="btnPausa">⏸ Pausa</button>
+
+<div id="menuPausa" style="display: none; margin-top: 2rem;">
+  <p>⏸ Juego en pausa</p>
+  <button id="btnReanudar">▶ Reanudar</button>
+  <button id="btnVolverMenu">🔙 Volver al Menú</button>
+</div>
+      <div class="botones-juego">
+        
+        
+      <button id="btnReiniciar" style="display:none;">🔁 Reiniciar intento</button>
+      <button id="btnMenu" style="display:none;">🏠 Volver al menú</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/juegoO.js"></script>
+</body>
+</html>

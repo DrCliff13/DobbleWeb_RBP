@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Usuario - Dobble</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-purple-500 to-indigo-600 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg">
+    <h2 class="text-2xl font-bold mb-6 text-center text-purple-700">Registro Completo</h2>
+
+    <form id="formRegistro">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm">Usuario *</label>
+          <input type="text" id="usuario" required class="w-full mt-1 p-2 border rounded-lg" />
+        </div>
+
+        <div>
+          <label class="block text-sm">Contraseña *</label>
+          <input type="password" id="clave" required class="w-full mt-1 p-2 border rounded-lg" />
+        </div>
+
+        <div>
+          <label class="block text-sm">Nombres</label>
+          <input type="text" id="nombres" class="w-full mt-1 p-2 border rounded-lg" />
+        </div>
+
+        <div>
+          <label class="block text-sm">Apellidos</label>
+          <input type="text" id="apellidos" class="w-full mt-1 p-2 border rounded-lg" />
+        </div>
+
+        <div>
+          <label class="block text-sm">Cédula</label>
+          <input type="text" id="cedula" class="w-full mt-1 p-2 border rounded-lg" />
+        </div>
+
+        <div>
+          <label class="block text-sm">Fecha de Nacimiento</label>
+          <input type="date" id="fecha_nacimiento" class="w-full mt-1 p-2 border rounded-lg" />
+        </div>
+
+        <div>
+          <label class="block text-sm">Nivel de Escolaridad</label>
+          <input type="text" id="nivel_escolaridad" class="w-full mt-1 p-2 border rounded-lg" />
+        </div>
+
+        <div>
+        <label class="block text-sm">Tipo de Usuario</label>
+        <input type="text" id="tipo_usuario" class="w-full mt-1 p-2 border rounded-lg" placeholder="Ej: administrador, jugador, etc." />
+        </div>
+
+      </div>
+
+      <button type="submit" class="w-full mt-6 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition">
+        Registrarse
+      </button>
+      <p id="mensaje" class="text-center mt-4 text-sm text-red-500"></p>
+    </form>
+    <button type="button" class="btn btn-outline-primary w-100 mt-3" id="btnVolverInicio">Volver al inicio</button>
+  </div>
+
+  <script src="js/Registro.js"></script>
+</body>
+</html>

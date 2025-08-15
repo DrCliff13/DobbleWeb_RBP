@@ -1,0 +1,128 @@
+/* frontend/assets/css/login.css */
+
+
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+.login-block {
+  background: linear-gradient(to bottom, #FFB88C, #DE6262);
+  float: left;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.banner-sec {
+  background: url(https://static.pexels.com/photos/33972/pexels-photo.jpg) no-repeat left bottom;
+  background-size: cover;
+  min-height: 500px;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+}
+
+.container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+.carousel-inner {
+  border-radius: 0 10px 10px 0;
+}
+
+.carousel-caption {
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+
+}
+
+
+.login-sec {
+  padding: 50px 30px;
+  position: relative;
+}
+
+.login-sec .copy-text {
+  position: absolute;
+  width: 80%;
+  bottom: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.login-sec .copy-text i {
+  color: #FEB58A;
+}
+
+.login-sec .copy-text a {
+  color: #E36262;
+}
+
+.login-sec h2 {
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 30px;
+  color: #DE6262;
+}
+
+.login-sec h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: #FEB58A;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-login {
+  background: #DE6262;
+  color: #fff;
+  font-weight: 600;
+}
+
+.banner-text {
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  padding-left: 31px;
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 12px;
+
+}
+.banner-text h2 {
+  text-align: center;
+}
+
+.banner-text h2:after {
+  content: "";
+  display: block;
+  height: 5px;
+  background: #FFF;
+  border-radius: 3px;
+  margin-top: 10px;
+  width: 90%; 
+}
+
+.banner-text p {
+  color: #fff;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.login-block {
+  min-height: 100vh; /* 100% del alto de la pantalla */
+  background: linear-gradient(to right, #ff9966, #ff5e62); /* mismo color del fondo */
+}
+
+.login-block {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}

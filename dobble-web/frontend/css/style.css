@@ -1,0 +1,129 @@
+/* --- ESTILOS COMBINADOS Y CORREGIDOS --- */
+
+    /* Estilo base del cuerpo con fondo de estrellas */
+    body {
+        font-family: 'Inter', sans-serif;
+        background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        height: 100vh;
+        overflow-x: hidden; /* Evita el desbordamiento horizontal */
+        overflow-y: auto; /* Permite el scroll vertical si el contenido es largo */
+        color: white; /* Texto blanco por defecto para que contraste con el fondo */
+        text-align: center;
+    }
+    
+    /* Contenedor para las capas de estrellas (fondo) */
+    .stars-container {
+        position: fixed; /* Fijo para que no se mueva con el scroll */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 0;
+    }
+    
+    .stars1 {
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        box-shadow: 673px 384px #FFF, 1563px 1863px #FFF, 1494px 1478px #FFF, 49px 1318px #FFF, 1696px 1017px #FFF, 1499px 233px #FFF, 1374px 1735px #FFF, 24px 791px #FFF, 126px 1782px #FFF, 1222px 359px #FFF, 546px 1209px #FFF, 1530px 107px #FFF, 798px 998px #FFF, 1238px 1211px #FFF, 1152px 146px #FFF, 1246px 142px #FFF, 1383px 1426px #FFF, 1022px 182px #FFF, 1789px 1106px #FFF, 1232px 1391px #FFF, 1618px 1774px #FFF, 381px 1193px #FFF, 1629px 1898px #FFF, 1559px 1392px #FFF, 1269px 1179px #FFF, 1827px 1133px #FFF, 298px 148px #FFF, 1739px 21px #FFF, 1916px 641px #FFF, 1878px 1118px #FFF, 1799px 1383px #FFF, 1146px 376px #FFF, 584px 165px #FFF, 1172px 1492px #FFF, 149px 1795px #FFF, 1750px 1872px #FFF, 111px 96px #FFF, 1826px 1010px #FFF, 1225px 1279px #FFF, 1073px 1894px #FFF;
+        animation: anim-stars 50s linear infinite;
+    }
+
+    .stars2 {
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        box-shadow: 1047px 1174px #FFF, 149px 402px #FFF, 127px 1014px #FFF, 1485px 1017px #FFF, 180px 1111px #FFF, 1656px 1492px #FFF, 1686px 1217px #FFF, 1708px 683px #FFF, 1152px 135px #FFF, 1290px 1613px #FFF, 769px 739px #FFF, 1761px 1165px #FFF, 1335px 719px #FFF, 1249px 1350px #FFF, 1716px 1011px #FFF, 1554px 128px #FFF, 889px 756px #FFF, 1300px 522px #FFF, 34px 1445px #FFF, 1243px 1135px #FFF, 550px 1545px #FFF, 219px 1447px #FFF, 65px 133px #FFF, 1500px 1620px #FFF, 720px 843px #FFF, 1109px 1625px #FFF, 491px 179px #FFF, 1709px 1136px #FFF, 1482px 658px #FFF, 1138px 1836px #FFF;
+        animation: anim-stars 100s linear infinite;
+    }
+
+    .stars3 {
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: 1475px 1632px #FFF, 1481px 1326px #FFF, 1478px 1148px #FFF, 210px 1568px #FFF, 937px 158px #FFF, 891px 233px #FFF, 715px 1827px #FFF, 213px 406px #FFF, 35px 231px #FFF, 1419px 456px #FFF, 1245px 1528px #FFF, 1358px 1162px #FFF, 1729px 1705px #FFF, 1822px 1471px #FFF, 1667px 1740px #FFF, 442px 799px #FFF, 1482px 421px #FFF, 396px 899px #FFF, 76px 1870px #FFF, 1845px 131px #FFF, 1319px 1636px #FFF, 794px 1361px #FFF, 1177px 695px #FFF, 107px 1306px #FFF;
+        animation: anim-stars 150s linear infinite;
+    }
+
+    @keyframes anim-stars {
+        from { transform: translateY(0px); }
+        to { transform: translateY(-2000px); }
+    }
+
+    /* Contenedor principal del juego */
+    .game-content {
+        position: relative;
+        z-index: 1;
+        padding: 2rem;
+    }
+    
+    /* Estilos del juego */
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+    .usuario {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .info-juego {
+      margin-bottom: 1rem;
+    }
+    .cartas {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap; 
+    }
+    .carta {
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 1rem;
+      width: 280px;  
+      height: 280px; 
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      cursor: pointer;
+      color: #333; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .figurasContainer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      align-items: center;
+      gap: 10px;
+      padding: 15px;
+      width: 240px;
+      height: 240px;
+    }
+    .simbolo {
+      font-size: 2rem;
+      margin: 5px;
+      display: inline-block;
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+      user-select: none; 
+    }
+    .simbolo:hover {
+      background: #eef;
+      transform: scale(1.1);
+    }
+    button {
+      color: #1F2937; 
+      background-color: #F9FAFB;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #D1D5DB;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #E5E7EB;
+    }

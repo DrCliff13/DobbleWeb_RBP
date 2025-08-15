@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dobble - Ranking de Campeones</title>
+    <link rel="stylesheet" href="css/Rankin.css"> <!-- Tu CSS si está en archivo externo -->
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🏆 HALL OF FAME 🏆</h1>
+            <p class="subtitle">Los mejores jugadores de Dobble están aquí</p>
+            <div class="sort-buttons">
+                <button class="sort-btn active" data-sort="puntaje">📊 Por Puntaje</button>
+                <button class="sort-btn" data-sort="victorias">🏆 Por Victorias</button>
+                <button class="sort-btn" data-sort="tiempo">⚡ Por Tiempo</button>
+                <button class="sort-btn" data-sort="partidas">🎮 Por Partidas</button>
+                <button class="refresh-btn sort-btn" onclick="refreshRanking()">🔄 Actualizar</button>
+            </div>
+        </div>
+
+        <div class="podium">
+            <div class="podium-place second-place" onclick="celebratePlayer(2)">
+                <div class="podium-avatar">🥈</div>
+                <div class="podium-base">
+                    <div class="player-name">---</div>
+                    <div class="player-score">0 pts</div>
+                </div>
+            </div>
+
+            <div class="podium-place first-place" onclick="celebratePlayer(1)">
+                <div class="crown">👑</div>
+                <div class="podium-avatar">🥇</div>
+                <div class="podium-base">
+                    <div class="player-name">---</div>
+                    <div class="player-score">0 pts</div>
+                </div>
+            </div>
+
+            <div class="podium-place third-place" onclick="celebratePlayer(3)">
+                <div class="podium-avatar">🥉</div>
+                <div class="podium-base">
+                    <div class="player-name">---</div>
+                    <div class="player-score">0 pts</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ranking-list">
+            <!-- Aquí se insertan los jugadores desde JS -->
+        </div>
+
+        <div class="motivation-box">
+            <div class="motivation-text">
+                ¿Tienes lo que se necesita para estar en el TOP 3? 🔥
+            </div>
+            <button class="cta-button" onclick="startGame()">
+                <span class="trophy-icon">🎮</span>
+                ¡JUGAR AHORA Y SUBIR AL PODIO!
+            </button>
+        </div>
+    </div>
+
+    <!-- Script dinámico al final -->
+    <!-- Puedes pegar aquí el JS combinado que ya te pasé en el mensaje anterior -->
+    <script src="js/Rankin.js"></script> <!-- O el script directo si no lo separas -->
+</body>
+</html>

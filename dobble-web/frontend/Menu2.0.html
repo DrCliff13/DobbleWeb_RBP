@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobble - Escoge tu Modo Favorito</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/Menu.css" />
+</head>
+<body>
+    <div class="floating-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="game-container" id="gameContainer">
+        <h1 class="title">
+            <i class="fas fa-gamepad me-3"></i>
+            Escoge tu Dobble Favorito
+            </br>
+            <div>
+                <span id="nombreUsuarioMenu" class="nombre-jugador"></span>
+            </div>
+        </h1>
+
+        <div id="stats">
+            <div class="stat-item">
+                <span id="gamesPlayed">0</span> Partidas<br>
+            </div>
+            <div class="stat-item">
+                <span id="bestTime">0s</span> Mejor Tiempo<br>
+            </div>
+            <div class="stat-item">
+                <span id="winRate">0%</span> Victorias
+            </div>
+        </div>
+    </br>
+
+        <div class="d-grid gap-3">
+            <button class="btn game-mode-btn btn-classic" onclick="selectMode('classic')">
+                <i class="fas fa-play mode-icon"></i>
+                Modo Clásico
+            </button>
+            
+            <button class="btn game-mode-btn btn-educational" onclick="selectMode('educational')">
+                <i class="fas fa-graduation-cap mode-icon"></i>
+                Modo Educativo
+            </button>
+            
+            <button class="btn game-mode-btn btn-challenge" onclick="selectMode('challenge')">
+                <i class="fas fa-fire mode-icon"></i>
+                Modo Reto Contrarreloj
+            </button>
+            
+            <button class="btn game-mode-btn btn-collaborative" onclick="selectMode('collaborative')">
+                <i class="fas fa-users mode-icon"></i>
+                Modo Historia
+            </button>
+            
+            <button class="btn game-mode-btn btn-ranking" onclick="selectMode('ranking')">
+            <i class="fas fa-trophy mode-icon"></i>
+            Ver Ranking
+            </button>
+            
+            <button class="btn game-mode-btn btn-exit" onclick="exitGame()">
+                <i class="fas fa-door-open mode-icon"></i>
+                Salir
+            </button>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle me-2"></i>
+        <span id="notificationText">Modo seleccionado!</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="js/Menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego Dobble</title>
+  <link rel="stylesheet" href="css/JCTime.css" />
+</head>
+<body>
+  <div class="background-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <div class="container">
+    <h1>Juego Dobble</h1>
+    
+    <p class="usuario">Bienvenido: <span id="nombreUsuario"></span></p>
+
+    
+    <div class="info-juego">
+      <div class="stat-card">
+        ⏱ Tiempo: <span class="stat-value" id="tiempo">30</span> seg
+      </div>
+      <div class="stat-card">
+        🧑 Puntaje: <span class="stat-value" id="puntaje">0</span>
+      </div>
+    </div>
+
+   <button id="btnIniciar">🎮 Iniciar juego</button>
+
+    <div id="zonaJuego" style="display: none;">
+      <div class="cartas">
+        <div id="carta1" class="carta">
+        </div>
+        <div id="carta2" class="carta">
+        </div>
+      </div>
+      
+      <div id="resultado">¡Encuentra el símbolo común entre las dos cartas!</div>
+      
+<button id="btnPausa">⏸ Pausa</button>
+
+<div id="menuPausa" style="display: none; margin-top: 2rem;">
+  <p>⏸ Juego en pausa</p>
+  <button id="btnReanudar">▶ Reanudar</button>
+  <button id="btnVolverMenu">🔙 Volver al Menú</button>
+</div>
+      <div class="botones-juego">
+        
+        
+      <button id="btnReiniciar" style="display:none;">🔁 Reiniciar intento</button>
+      <button id="btnMenu" style="display:none;">🏠 Volver al menú</button>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/JCTime.js"></script>
+</body>
+</html>

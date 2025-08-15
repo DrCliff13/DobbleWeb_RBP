@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobble - Modo Historia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos.CSS -->
+    <link rel="stylesheet" href="css/historia.css" />
+    
+    
+</head>
+<body class="text-white">
+    <!-- Partículas flotantes -->
+    <div class="floating-particles" id="particles"></div>
+
+    <div class="container-fluid px-3 py-4">
+        <!-- Header -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 text-center animate-slide-in">
+                <h1 class="fantasy-title display-3 mb-3">
+                    <i class="fas fa-dragon me-3"></i>
+                    El Explorador de Símbolos
+                    <i class="fas fa-magic ms-3"></i>
+                </h1>
+                <p class="lead mb-0 text-white-500">
+                    <i class="fas fa-scroll me-2"></i>
+                    Una aventura épica donde debes encontrar los símbolos mágicos para salvar el reino
+                </p>
+            </div>
+        </div>
+
+        <!-- Chapter Info -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-10">
+                <div class="glass-card rounded-4 p-4 animate-fade-in">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h2 class="h3 mb-2 text-warning" id="chapter-title">
+                                <i class="fas fa-book-open me-2"></i>
+                                Capítulo 1: El Bosque Encantado
+                            </h2>
+                            <p class="mb-0 text-white-500" id="chapter-description">
+                                Has llegado al Bosque Encantado. Los símbolos mágicos están dispersos y debes encontrar las conexiones entre ellos para avanzar.
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <div class="badge bg-primary fs-6 px-3 py-2">
+                                <i class="fas fa-star me-1"></i>
+                                <span id="progress-text">0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-fantasy mt-3">
+                        <div class="progress-bar" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+<div class="row justify-content-center mb-4">
+    <div class="col-lg-10">
+        <div class="row g-3">
+            <!-- Tarjeta de Puntos -->
+            <div class="col-md-6">
+                <div class="stat-card rounded-3 p-3 text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-2">
+                        <i class="fas fa-trophy text-warning fs-3 me-2"></i>
+                        <div>
+                            <div class="h2 mb-0 text-warning" id="score">0</div>
+                            <small class="text-white-500">Puntos</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recuadro del tiempo (oculto) -->
+            <div class="col-md-4" style="display: none;">
+                <div class="stat-card rounded-3 p-3 text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-2">
+                        <i class="fas fa-clock text-info fs-3 me-2"></i>
+                        <div>
+                            <div class="h2 mb-0 text-info" id="time">0s</div>
+                            <small class="text-white-500">Tiempo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Coincidencias -->
+            <div class="col-md-6">
+                <div class="stat-card rounded-3 p-3 text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-2">
+                        <i class="fas fa-bullseye text-success fs-3 me-2"></i>
+                        <div>
+                            <div class="h2 mb-0 text-success" id="matches">0</div>
+                            <small class="text-white-500">Coincidencias</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Story Text DIV AREA -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-10">
+                <div class="story-card rounded-4 p-4">
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-feather-alt text-warning fs-4 me-3 mt-1"></i>
+                        <p class="mb-0 fs-5 lh-base" id="story-text">
+                            Bienvenido, valiente explorador. El reino está en peligro y solo tú puedes salvarlo encontrando los símbolos mágicos perdidos. Cada símbolo que encuentres te acercará más a tu destino. ¡Busca las coincidencias entre las cartas para continuar tu aventura!
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-fantasy text-white tooltip-custom" onclick="leerTexto()">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    Leer Texto
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-10">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <div class="mb-3">
+                            <h4 class="text-warning mb-2">
+                                <i class="fas fa-cards-blank me-2"></i>
+                                Carta del Destino
+                            </h4>
+                            <small class="text-white-500">Haz clic en los símbolos para encontrar coincidencias</small>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="game-card rounded-circle d-flex flex-wrap align-items-center justify-content-center p-3 position-relative" id="card1">
+                                <!-- Símbolos se generan aquí -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="mb-3">
+                            <h4 class="text-warning mb-2">
+                                <i class="fas fa-eye me-2"></i>
+                                Carta del Oráculo
+                            </h4>
+                            <small class="text-white-500">Encuentra el símbolo común entre ambas cartas</small>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="game-card rounded-circle d-flex flex-wrap align-items-center justify-content-center p-3 position-relative" id="card2">
+                                <!-- Símbolos se generan aquí -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-10">
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <button class="btn btn-fantasy text-white tooltip-custom" id="hint-btn" data-tooltip="Resalta el símbolo común">
+                        <i class="fas fa-lightbulb me-2"></i>
+                        Pista Mágica
+                    </button>
+                    <button class="btn btn-fantasy text-white tooltip-custom" id="next-btn" disabled data-tooltip="Continúa al siguiente desafío">
+                        <i class="fas fa-forward me-2"></i>
+                        Siguiente Desafío
+                    </button>
+                    <button class="btn btn-fantasy text-white tooltip-custom" id="restart-btn" data-tooltip="Reinicia el capítulo actual">
+                        <i class="fas fa-redo me-2"></i>
+                        Reiniciar Capítulo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Completación -->
+    <div class="modal fade modal-fantasy" id="completion-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header border-0 text-center">
+                    <h2 class="modal-title fantasy-title w-100 mb-0" id="modal-title">
+                        <i class="fas fa-crown me-2"></i>
+                        ¡Capítulo Completado!
+                    </h2>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-medal text-warning display-1 mb-3"></i>
+                        <p class="fs-5 mb-0" id="modal-text">
+                            Has encontrado todos los símbolos mágicos de este capítulo.
+                        </p>
+                    </div>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-6">
+                            <div class="stat-card rounded-3 p-3">
+                                <i class="fas fa-trophy text-warning fs-3 mb-2"></i>
+                                <div class="h3 mb-0 text-warning" id="final-score">0</div>
+                                <small class="text-white-50">Puntos Finales</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-card rounded-3 p-3">
+                                <i class="fas fa-stopwatch text-info fs-3 mb-2"></i>
+                                <div class="h3 mb-0 text-info" id="final-time">0s</div>
+                                <small class="text-white-50">Tiempo Total</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-center">
+                    <button class="btn btn-fantasy text-white btn-lg" id="continue-btn" onclick="nextChapter()">
+                        <i class="fas fa-magic me-2"></i>
+                        Continuar Aventura
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/historia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+    function leerTexto() {
+      const texto = document.getElementById("story-text").textContent;
+      const speech = new SpeechSynthesisUtterance(texto);
+      speech.lang = "es-ES";
+      speech.rate = 1;
+      speech.pitch = 1;
+      window.speechSynthesis.speak(speech);
+    } 
+    </script>
+</body>
+</html>
