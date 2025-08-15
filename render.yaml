@@ -1,5 +1,6 @@
-# Este archivo ya está listo y configurado correctamente.
+# render.yaml - Versión final y correcta
 services:
+  # Servicio para el Backend (API, Servidor)
   - type: web
     name: dobble-backend
     env: node
@@ -8,15 +9,7 @@ services:
     buildCommand: "npm install"
     startCommand: "node server.js"
     envVars:
-      # Render inyectará aquí AUTOMÁTICAMENTE las variables que
-      # configures en la pestaña "Environment" de tu dashboard.
-      # ¡No necesitas escribirlas aquí!
+      # Render inyectará aquí las variables de la base de datos
+      # que configures en la pestaña "Environment" del dashboard.
       - key: NODE_ENV
         value: production
-
-  - type: static_site
-    name: dobble-frontend
-    plan: free
-    rootDir: ./frontend
-    buildCommand: "npm install && npm run build"
-    publishDir: build
